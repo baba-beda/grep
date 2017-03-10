@@ -14,7 +14,7 @@ import qualified Data.Text   as T
 grep :: Text -> [Text] -> [Text]
 grep t _ | T.null t = ["Invalid input"]
 grep s xs           =
-    map concatWithNumbers $ catMaybes $ zipWith checkLineI xs [(1::Int)..]
+    map concatWithNumbers $ catMaybes $ zipWith checkLineI xs [1..]
   where
     checkLineI :: Text -> Int -> Maybe ([Text], Int)
     checkLineI line i =
